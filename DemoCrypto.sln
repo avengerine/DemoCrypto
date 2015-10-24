@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCrypto", "DemoCrypto\DemoCrypto.csproj", "{AA332439-1C8E-4162-B309-1CEF708DB5D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{178DE19C-26EE-4C99-BECC-33D6AF108544}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCryptoTest", "DemoCryptoTest\DemoCryptoTest.csproj", "{F371AE55-0EA5-4641-9D1F-3824F7FB35EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA332439-1C8E-4162-B309-1CEF708DB5D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA332439-1C8E-4162-B309-1CEF708DB5D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA332439-1C8E-4162-B309-1CEF708DB5D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA332439-1C8E-4162-B309-1CEF708DB5D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F371AE55-0EA5-4641-9D1F-3824F7FB35EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F371AE55-0EA5-4641-9D1F-3824F7FB35EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F371AE55-0EA5-4641-9D1F-3824F7FB35EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F371AE55-0EA5-4641-9D1F-3824F7FB35EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
