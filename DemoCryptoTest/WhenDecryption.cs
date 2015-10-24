@@ -69,9 +69,15 @@ namespace DemoCryptoTest
             }
 
             [Test]
-            public void ShouldReturnEmpty()
+            public void AnExceptionIsThrown()
             {
-                EncryptedText.ShouldBeEmpty();
+                ThrowsException.ShouldBeTrue();
+            }
+
+            [Test]
+            public void ExceptionShouldBe()
+            {
+                Exception.ShouldBeType<ArgumentNullException>();
             }
         }
     }
