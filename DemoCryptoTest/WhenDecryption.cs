@@ -28,13 +28,11 @@ namespace DemoCryptoTest
             try
             {
                 RecoveredText = SUT.DecryptText(EncryptedText, Password);
-            }
-            catch (Exception e)
+            } catch (Exception e)
             {
                 Exception = e;
                 ThrowsException = true;
             }
-            
         }
 
         class AndPasswordIsNull : WhenDecryption
@@ -43,7 +41,6 @@ namespace DemoCryptoTest
             {
                 base.Given();
                 Password = null;
-                EncryptedText = "Some encrypted text illegible....";
             }
 
             [Test]
@@ -64,7 +61,6 @@ namespace DemoCryptoTest
             protected override void Given()
             {
                 base.Given();
-                Password = "password";
                 EncryptedText = null;
             }
 
@@ -79,6 +75,28 @@ namespace DemoCryptoTest
             {
                 Exception.ShouldBeType<ArgumentNullException>();
             }
+        }
+
+        class AndEncryptedTextIsShorterThanIv : WhenDecryption
+        {
+            protected override void Given()
+            {
+                base.Given();
+                EncryptedText = "wrong";
+            }
+
+            [Test]
+            public void AnExceptionIsThrown()
+            {
+                ThrowsException.ShouldBeTrue();
+            }
+
+            [Test]
+            public void ExceptionShouldBe()
+            {
+                Exception.ShouldBeType<FormatException>();
+            }
+
         }
     }
 }

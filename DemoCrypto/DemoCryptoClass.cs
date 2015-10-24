@@ -71,8 +71,16 @@ namespace DemoCrypto
             if (password  == null || password.Length <= 0)
                 throw new ArgumentNullException("Invalid password");
             // Get the bytes of the string
+            byte[] bytesToBeDecrypted;
+            try
+            {
+                bytesToBeDecrypted = Convert.FromBase64String(input);
+            }
+            catch (FormatException e)
+            {
+                throw;
+            }
             
-            byte[] bytesToBeDecrypted = Convert.FromBase64String(input);
             byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
             passwordBytes = SHA256.Create().ComputeHash(passwordBytes);
 
