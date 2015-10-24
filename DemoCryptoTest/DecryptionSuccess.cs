@@ -14,12 +14,12 @@ namespace DemoCryptoTest
 
         protected override void Given()
         {
-            cipherText = SUT.EncryptText(password, plainText);
+            cipherText = SUT.EncryptText(plainText, password);
         }
 
         protected override void When()
         {
-            recoveredText = SUT.DecryptText(password, cipherText);
+            recoveredText = SUT.DecryptText(cipherText, password);
         }
 
         [Test]
