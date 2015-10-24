@@ -1,6 +1,0 @@
-C:\devel\CryptoTest\CryptoTest\bin\Debug\CryptoTest.exe.config
-C:\devel\CryptoTest\CryptoTest\bin\Debug\CryptoTest.exe
-C:\devel\CryptoTest\CryptoTest\bin\Debug\CryptoTest.pdb
-C:\devel\CryptoTest\CryptoTest\obj\Debug\DemoCrypto.csprojResolveAssemblyReference.cache
-C:\devel\CryptoTest\CryptoTest\obj\Debug\CryptoTest.exe
-C:\devel\CryptoTest\CryptoTest\obj\Debug\CryptoTest.pdb
