@@ -65,7 +65,13 @@ namespace DemoCrypto
 
         public string DecryptText(string input, string password)
         {
+
+            if (input == null || input.Length <= 0)
+                throw new ArgumentNullException("Invalid input");
+            if (password  == null || password.Length <= 0)
+                throw new ArgumentNullException("Invalid password");
             // Get the bytes of the string
+            
             byte[] bytesToBeDecrypted = Convert.FromBase64String(input);
             byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
             passwordBytes = SHA256.Create().ComputeHash(passwordBytes);
