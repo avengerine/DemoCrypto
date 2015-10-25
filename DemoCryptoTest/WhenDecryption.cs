@@ -72,7 +72,7 @@ namespace DemoCryptoTest
             }
 
             [Test]
-            public void ExceptionShouldBe()
+            public void ExceptionIsArgumentNull()
             {
                 Exception.ShouldBeType<ArgumentNullException>();
             }
