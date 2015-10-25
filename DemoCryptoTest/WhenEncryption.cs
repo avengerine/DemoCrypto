@@ -101,12 +101,6 @@ namespace DemoCryptoTest
             }
 
             [Test]
-            public void ReturnIsNotNull()
-            {
-                CipherText.ShouldNotBeNull();
-            }
-
-            [Test]
             public void CipherTextIsNotEmpty()
             {
                 CipherText.ShouldNotBeEmpty();
