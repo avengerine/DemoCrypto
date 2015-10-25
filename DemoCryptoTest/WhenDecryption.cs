@@ -20,7 +20,7 @@ namespace DemoCryptoTest
         {
             Password = "password";
             PlainText = "This is the plain text";
-            ThrowsException = true;
+            ThrowsException = false;
             EncryptedText = SUT.EncryptText(PlainText, Password);
         }
 
@@ -93,11 +93,39 @@ namespace DemoCryptoTest
             }
 
             [Test]
-            public void ExceptionShouldBe()
+            public void ExceptionTypeIsCryptographic()
             {
                 Exception.ShouldBeType<CryptographicException>();
             }
+        }
 
+        class AndIsSuccessful : WhenDecryption
+        {
+            [Test]
+            public void NoExceptionIsThrown()
+            {
+                ThrowsException.ShouldBeFalse();
+            }
+
+            [Test]
+            public void CipherTextIsNotEmpty()
+            {
+                EncryptedText.ShouldNotBeEmpty();
+            }
+
+            [Test]
+            public void TextIsRecoverable()
+            {
+                RecoveredText.ShouldEqual(PlainText);
+            }
+
+            [Test]
+            public void SecondEncryptionIsDifferent()
+            {
+                var d = new DemoCryptoClass();
+                var ct = d.EncryptText(PlainText, Password);
+                EncryptedText.ShouldNotEqual(ct);
+            }
         }
     }
 }
