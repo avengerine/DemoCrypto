@@ -99,11 +99,14 @@ namespace DemoCrypto
             // The salt bytes must be at least 8 bytes.
             byte[] saltBytes = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8 };
             byte[] initializationVector = new byte[16];
-            
 
-            var bytesToBeDecrypted = new byte[Math.Abs(bytesToBeDecryptedIv.Length - 16)];
+            var length = bytesToBeDecryptedIv.Length - 16;
+            if (length <= 0)
+                throw new CryptographicException();
+
+            var bytesToBeDecrypted = new byte[length];
             Array.Copy(bytesToBeDecryptedIv, 0, initializationVector, 0, 16);
-            Array.Copy(bytesToBeDecryptedIv, 16, bytesToBeDecrypted, 0, bytesToBeDecrypted.Length);
+            Array.Copy(bytesToBeDecryptedIv, 16, bytesToBeDecrypted, 0, length);
             
             using (MemoryStream ms = new MemoryStream())
             {

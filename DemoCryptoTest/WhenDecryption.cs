@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using DemoCrypto;
 using NUnit.Framework;
 using Should;
@@ -77,12 +78,12 @@ namespace DemoCryptoTest
             }
         }
 
-        class AndEncryptedTextIsShorterThanIv : WhenDecryption
+        class AndEncryptedTextHasBeenChanged : WhenDecryption
         {
             protected override void Given()
             {
                 base.Given();
-                EncryptedText = "wrong";
+                EncryptedText = "ie/UVnv7yO8pGRObtnNeGsLqQe8eewfp/C9n4Up5Zzvob/i+6OFf77w8eIhK/IWnILfgZFFAA3Y3mZHc0NRQjrT9jFuamittF5+IpdyCAIFjPYw1j1x2x1QOIaYB08I0Hu5dJnJQKrtbh74tuR7ZJEB/+uRQff/jBZgbedBaQEU=";
             }
 
             [Test]
@@ -94,7 +95,7 @@ namespace DemoCryptoTest
             [Test]
             public void ExceptionShouldBe()
             {
-                Exception.ShouldBeType<FormatException>();
+                Exception.ShouldBeType<CryptographicException>();
             }
 
         }
