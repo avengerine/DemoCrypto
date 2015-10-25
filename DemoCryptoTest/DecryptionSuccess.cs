@@ -7,25 +7,25 @@ namespace DemoCryptoTest
 {
     class DecryptionSuccess : SpecsFor<DemoCryptoClass>
     {
-        private string password = "password";
-        private string plainText = "This is the plain text..";
-        private string cipherText = "";
-        private string recoveredText = "";
+        private const string Password = "password";
+        private const string PlainText = "This is the plain text..";
+        private string _cipherText;
+        private string _recoveredText;
 
         protected override void Given()
         {
-            cipherText = SUT.EncryptText(plainText, password);
+            _cipherText = SUT.EncryptText(PlainText, Password);
         }
 
         protected override void When()
         {
-            recoveredText = SUT.DecryptText(cipherText, password);
+            _recoveredText = SUT.DecryptText(_cipherText, Password);
         }
 
         [Test]
         public void TextRecoveredMatchesPlainText()
         {
-            recoveredText.ShouldEqual(plainText);
+            _recoveredText.ShouldEqual(PlainText);
         }
     }
 }
