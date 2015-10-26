@@ -65,9 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="WhenDecryption.cs" />
-    <Compile Include="DecryptionSuccess.cs" />
-    <Compile Include="EncryptionFailure.cs" />
-    <Compile Include="WhenEncryptionSuccess.cs" />
+    <Compile Include="WhenEncryption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
